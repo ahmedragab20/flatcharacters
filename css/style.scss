@@ -1,0 +1,356 @@
+// Variables
+$fontSize: 1rem;
+$letterSpacing: 1px;
+$transition: all 0.3s ease-in-out;
+$lineHeight: 1.5;
+$headline: 5rem;
+$width: 100%;
+html,
+body {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+// the main font
+@font-face {
+  font-family: "Poppins", sans-serif;
+  @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap");
+}
+// Let's Creative
+/* Thescroll handle */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #e2dfdf;
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #2323239a;
+}
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #232323;
+}
+// the selection
+*::selection {
+  background-color: rgba(189, 184, 184, 0.356);
+}
+//To Top Button
+.to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 15px;
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(120deg, #212121 50%, #535353);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50% 50% 0 0;
+  opacity: 0;
+  z-index: 2;
+  pointer-events: none;
+  cursor: pointer;
+  transition: $transition;
+  &.go {
+    opacity: 1;
+    pointer-events: all;
+  }
+  &:hover {
+    a {
+      margin-top: -5px;
+    }
+  }
+  a {
+    color: #fff;
+    font-size: 1.2rem;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    transition: $transition;
+  }
+}
+.button {
+  border: none;
+  margin: 10px auto 30px auto;
+  border-radius: 7px;
+  background: linear-gradient(120deg, #212121, #535353);
+  padding: 8px;
+  min-width: 130px;
+  height: 42px;
+  color: #eee;
+  text-transform: uppercase;
+  transition: $transition;
+  &:hover {
+    letter-spacing: $letterSpacing + 1;
+    min-width: 140px;
+  }
+}
+header {
+  background: linear-gradient(#eee 90%, #fff);
+  nav {
+    min-height: 10vh;
+    width: 100%;
+    background-color: #eee;
+    input:focus {
+      outline: #252525 !important;
+    }
+    .logo {
+      h1 {
+        font-size: 2rem;
+        letter-spacing: -2px;
+        cursor: pointer;
+      }
+    }
+  }
+  .banner {
+    h2 {
+      margin: 30px auto;
+      font-size: $headline;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: $letterSpacing;
+    }
+    .images {
+      display: flex;
+      flex-wrap: nowrap;
+      justify-content: center;
+      align-items: center;
+      .pic1,
+      .pic2,
+      .pic3 {
+        width: 25%;
+        height: 30vh;
+        margin: 0 20px;
+        img {
+          border-radius: 0 0 50% 50%;
+        }
+      }
+    }
+  }
+  // bootstrap override
+  .navbar-light .navbar-nav .nav-link.active,
+  .navbar-light .navbar-nav .show > .nav-link {
+    transition: $transition;
+    &:hover {
+      letter-spacing: $letterSpacing;
+    }
+    img {
+      width: 20px;
+      transform: translateY(-2px);
+    }
+  }
+}
+// the first article design
+.article-1,
+.article-2 {
+  .image {
+    min-height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img {
+      border-radius: 20px;
+      box-shadow: 25px 25px 50px #eee, -25px -25px 50px #eee;
+    }
+  }
+  .content {
+    h2 {
+      letter-spacing: $letterSpacing;
+      text-transform: uppercase;
+      font-size: $headline;
+      font-weight: 900;
+      text-shadow: -25px 25px 50px #252525b6;
+      margin-top: 15%;
+      margin-bottom: 50px;
+    }
+  }
+}
+.team {
+  h2 {
+    letter-spacing: $letterSpacing + 2;
+    font-size: $headline;
+    font-weight: 900;
+    text-align: center;
+    margin: 30px auto;
+  }
+  .card {
+    border-radius: 20px;
+    border: none;
+    box-shadow: 25px 25px 50px rgb(190, 190, 190),
+      -25px -25px 50px rgb(190, 190, 190);
+    overflow: hidden;
+    transition: $transition;
+    &:hover {
+      box-shadow: none;
+    }
+    .image {
+      transition: $transition;
+      overflow: hidden;
+      img {
+        transition: $transition;
+        &:hover {
+          transform: rotate(5deg) scale(1.1);
+        }
+      }
+    }
+    .card-body {
+      h5 {
+        text-transform: uppercase;
+        letter-spacing: $letterSpacing;
+        margin-top: 15px;
+        font-size: 2.1rem;
+        font-weight: 900;
+      }
+      p {
+        letter-spacing: -0.5px;
+      }
+      .button {
+        height: 45px;
+        min-width: 150px;
+        text-transform: none;
+        &:hover {
+          min-width: 160px;
+        }
+      }
+    }
+  }
+}
+.article-3,
+.article-4 {
+  .image {
+    min-height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: $transition;
+    border-radius: 20px;
+    overflow: hidden;
+    img {
+      transition: $transition;
+      &:hover {
+        transform: rotate(-2deg) scale(1.2);
+      }
+      border-radius: 20px;
+    }
+  }
+  .content {
+    h2 {
+      text-align: left;
+      text-transform: capitalize;
+      letter-spacing: $letterSpacing;
+      text-transform: uppercase;
+      font-size: $headline;
+      font-weight: 900;
+      text-shadow: -25px 25px 50px #252525b6;
+      margin-top: 15%;
+      margin-bottom: 50px;
+    }
+  }
+}
+.subscribe {
+  min-height: 80vh;
+  background: url(../images/subscribe.jpg) center no-repeat fixed;
+  background-size: cover;
+  position: relative;
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.678), #111111 90%);
+    color: rgba(255, 255, 255, 0.842);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    h2 {
+      letter-spacing: $letterSpacing;
+    }
+    .button {
+      min-height: 65px;
+      min-width: 230px;
+      font-size: 1.7rem;
+      box-shadow: 10px 10px 40px rgba(238, 238, 238, 0.274),
+        -10px -10px 40px rgba(238, 238, 238, 0.274);
+    }
+  }
+}
+/********** The Media Query *********/
+// just for large screens
+@media (min-width: 1024px) {
+  header {
+    min-height: 100vh;
+    nav {
+      .logo {
+        display: none;
+      }
+    }
+  }
+  .team {
+    .card {
+      margin: 30px auto;
+    }
+  }
+}
+footer {
+  .icons {
+    margin: 20px auto;
+    h3 {
+      text-transform: capitalize;
+      letter-spacing: $letterSpacing;
+    }
+    i {
+      transition: $transition;
+      color: #1b1b1b;
+      font-size: 1.5rem;
+      opacity: 0.7;
+      margin: 5px;
+      cursor: pointer;
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+  h4 {
+    margin-bottom: 20px;
+    letter-spacing: $letterSpacing;
+    text-transform: uppercase;
+  }
+}
+// Ipad media
+@media (max-width: 768px) {
+  h2 {
+    font-size: $headline - 2 !important;
+  }
+}
+// iphone media
+@media (max-width: 550px) {
+  header {
+    h2 {
+      font-size: $headline - 2.5 !important;
+    }
+    .banner {
+      transform: translateY(8%);
+      .images {
+        .pic1,
+        .pic2,
+        .pic3 {
+          width: 33.333%;
+        }
+      }
+    }
+  }
+  .card {
+    width: 80% !important;
+    margin: 20px auto !important;
+  }
+  footer {
+    h4 {
+      font-size: 1.2rem;
+    }
+  }
+}
